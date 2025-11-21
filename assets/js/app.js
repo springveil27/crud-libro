@@ -82,7 +82,7 @@ async function cargarLibros(filtros = {}) {
 if (formLibro) {
   formLibro.addEventListener("submit", async (e) => {
     e.preventDefault();
-
+    
     const anioInput = parseInt(document.getElementById("anio").value);
     const anioActual = new Date().getFullYear();
 
