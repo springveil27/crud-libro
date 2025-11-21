@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CRUD de Libros</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div id="cuadro">
+      <div id="app">
+        <h1>CRUD de Libros</h1>
+
+        <div>
+          <button id="btn-agregar">Agregar Nuevo Libro</button>
+        </div>
+
+        <div id="modal" class="modal" hidden>
+          <div class="modal-overlay" id="modal-overlay"></div>
+          <div
+            class="modal-content"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="form-header"
+          >
+            <button id="modal-close" class="modal-close" aria-label="Cerrar">
+              ×
+            </button>
+            <header id="form-header">Agregar / Editar Libro</header>
+            <div>
+              <form id="form-libro">
+                <input type="hidden" id="id" />
+
+                <div>
+                  <label for="titulo">Título</label>
+                  <input type="text" id="titulo" name="titulo" required />
+                </div>
+
+                <div>
+                  <label for="autor">Autor</label>
+                  <input type="text" id="autor" name="autor" required />
+                </div>
+
+                <div>
+                  <label for="anio">Año</label>
+                  <input type="number" id="anio" name="anio" required />
+                </div>
+
+                <div>
+                  <label for="genero">Género</label>
+                  <input type="text" id="genero" name="genero" />
+                </div>
+
+                <div>
+                  <label for="isbn">ISBN</label>
+                  <input type="text" id="isbn" name="isbn" />
+                </div>
+
+                <div>
+                  <button type="submit" id="btn-guardar">Guardar</button>
+                  <button type="button" id="btn-cancelar">Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <section id="buscador">
+          <header>Buscar Libros</header>
+          <div>
+            <input id="bus-titulo" type="text" placeholder="Título" />
+            <input id="bus-autor" type="text" placeholder="Autor" />
+            <input id="bus-anio" type="number" placeholder="Año" />
+            <input id="bus-genero" type="text" placeholder="Género" />
+            <button id="btn-buscar">Buscar</button>
+          </div>
+        </section>
+
+        <section id="lista">
+          <header>Lista de Libros</header>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Año</th>
+                <th>Género</th>
+                <th>ISBN</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-libros"></tbody>
+          </table>
+        </section>
+      </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
