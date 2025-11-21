@@ -48,7 +48,7 @@ async function cargarLibros(filtros = {}) {
 
   const res = await fetch(url);
   let data = await res.json();
-  
+  // asegurar orden descendente por id (más simple que tocar el backend ahora)
   if (Array.isArray(data)) data.sort((a, b) => b.id - a.id);
 
   const tabla = document.getElementById("tabla-libros");
@@ -82,7 +82,16 @@ async function cargarLibros(filtros = {}) {
 if (formLibro) {
   formLibro.addEventListener("submit", async (e) => {
     e.preventDefault();
+    
+    const anioInput = parseInt(document.getElementById("anio").value);
+    const anioActual = new Date().getFullYear();
 
+    if (anioInput < 1000 || anioInput > anioActual + 1) {
+      alert(
+        "Por favor, introduce un año válido (entre el año 1000 y el próximo año)."
+      );
+      return;
+    }
     const id = document.getElementById("id").value;
 
     const libro = {
