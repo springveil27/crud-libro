@@ -1,0 +1,16 @@
+/*
+CREATE DATABASE crud_libros CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE crud_libros;
+
+CREATE TABLE libros (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(150) NOT NULL,
+  autor VARCHAR(150) NOT NULL,
+  anio_publicacion INT NOT NULL,
+  genero VARCHAR(100),
+  isbn VARCHAR(50),
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+*/
