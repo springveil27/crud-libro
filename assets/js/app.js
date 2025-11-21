@@ -48,7 +48,7 @@ async function cargarLibros(filtros = {}) {
 
   const res = await fetch(url);
   let data = await res.json();
-  // asegurar orden descendente por id (más simple que tocar el backend ahora)
+  
   if (Array.isArray(data)) data.sort((a, b) => b.id - a.id);
 
   const tabla = document.getElementById("tabla-libros");
